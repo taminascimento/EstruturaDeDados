@@ -1,0 +1,48 @@
+<template>
+	<lightning-card>
+		<div class="app slds-p-around_medium">
+			<h1 class="slds-text-heading_large">Estrutura de Dados</h1>
+			 
+			 <!-- <p>Nome: {pessoa.nome}</p>
+			<p>CPF: {pessoa.cpf}</p>
+			<p>Idade: {pessoa.idade}</p> -->
+
+
+			<h2 class='slds-text-heading_large '>
+				Dados da Conta - Objeto Simples</h2>
+      
+
+			<p>Nome: {account.name}</p>
+			<p>Tipo: {account.type}</p>
+			<p>Classificação: {account.rating}</p>
+			<p>Site: {account.website}</p>
+
+
+			<h2 class="slds-text-heading_large">Pokemon - Lista de Objetos</h2>
+
+        <!-- fo:each -> recebe uma lista com informações
+				o template irá repetir a quantidade de elementos da minha lista
+
+				for:item -> determina o local onde cada valor da lista fica armazenada a cada repetição
+
+				for(Account a: listAccount){}
+				for:each (listAccount)
+				for:item (a) 
+				 -->
+
+			<!--Em lista, temos que abrir um tag template -->
+			<template for:each={pokemons} for:item = 'poke'>
+				<!-- Só pode ter um filho -->
+        <p key ={poke.cod}>Nome : {poke.nome} Tipo:{poke.Tipo} Nível:{poke.Nível}</p>
+        <!-- caso queira colocar os outros, crio uma Div,
+				e coloco os filhos?
+					 <div key ={poke.cod}>
+					 <p>Nome : {poke.nome}</p>
+					 <p>Tipo : {poke.Tipo}</p>
+					 <p>Nível: {poke.Nível}</p>
+					 </div> -->
+			</template>
+
+		</div>
+	</lightning-card>
+</template>
